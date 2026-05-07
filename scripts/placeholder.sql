@@ -185,4 +185,15 @@ CROSS JOIN (
     FROM gym_fitness_dataset.dbo.fitness_membership_analytics_dataset
 ) t;
 
-
+-- Check is_active 
+SELECT 
+customer_id,
+join_date,
+last_visit_date,
+DATEDIFF(DAY,last_visit_date,max_date) date_diff,
+is_active
+FROM (
+    SELECT
+    *,
+    MAX(last_visit_date) OVER() AS max_date
+    FROM fitness_membership_analytics_dataset) t
