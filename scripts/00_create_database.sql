@@ -35,7 +35,7 @@ GO
 CREATE SCHEMA gym;
 GO
 
-CREATE TABLE gym.fitness_dataset (
+CREATE TABLE gym.fitness_membership_analytics_dataset (
     age INT NULL,
     membership_type NVARCHAR(50) NOT NULL,
     visit_per_week INT NULL,
@@ -64,10 +64,10 @@ CREATE TABLE gym.fitness_dataset (
 );
 GO
 
-TRUNCATE TABLE gym.fitness_dataset;
+TRUNCATE TABLE gym.fitness_membership_analytics_dataset;
 GO
 
-BULK INSERT gym.fitness_dataset
+BULK INSERT gym.fitness_membership_analytics_dataset
 FROM '"C:\Users\Ng.C Thanh Nhan\Downloads\Data Gym Membership\Fitness_Membership_Analytics_Dataset.csv"'
 WITH (
 	FIRSTROW = 2,
