@@ -65,7 +65,7 @@ UNION ALL
 SELECT 
     'churn_rae',
     -- Calculate Churn Rate
-    (at_risk_count * 100.0 / (at_risk_count + active_count)) AS churn_rate
+    (at_risk_count * 100.0 / (at_risk_count + active_count))
 FROM (
     SELECT 
         SUM(CASE WHEN is_active = 1 THEN 1 ELSE 0 END) AS active_count,
