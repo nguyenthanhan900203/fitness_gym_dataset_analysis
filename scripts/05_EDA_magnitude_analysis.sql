@@ -28,7 +28,7 @@ FROM fitness_membership_analytics_dataset
 GROUP BY membership_type
 ORDER BY SUM(final_price) DESC
 
--- total customer by location
+-- total customers by location
 SELECT
     DISTINCT home_gym_location,
     COUNT(*) customer_number
@@ -36,7 +36,7 @@ FROM fitness_membership_analytics_dataset
 GROUP BY home_gym_location
 ORDER BY COUNT(*) DESC
 
--- total customer by membership type
+-- total customers by membership type
 SELECT
     DISTINCT membership_type,
     COUNT(*) customer_number
@@ -44,7 +44,7 @@ FROM fitness_membership_analytics_dataset
 GROUP BY membership_type
 ORDER BY COUNT(*) DESC
 
--- total customer by subscription model
+-- total customers by subscription model
 SELECT
     DISTINCT subscription_model,
     COUNT(*) customer_number
@@ -52,7 +52,7 @@ FROM fitness_membership_analytics_dataset
 GROUP BY subscription_model
 ORDER BY COUNT(*) DESC
 
--- total customer using PT service
+-- total customers using the PT service
 SELECT 
     CASE    
         WHEN personal_training = 1 THEN 'Have PT'
@@ -74,7 +74,7 @@ AVG(final_price) AS average_price
 FROM fitness_membership_analytics_dataset
 GROUP BY membership_type
 
--- average price between have PT and no PT 
+-- average price between those with PT and no PT 
 SELECT 
     CASE    
         WHEN personal_training = 1 THEN 'Have PT'
@@ -95,7 +95,7 @@ AVG(final_price) AS average_price
 FROM fitness_membership_analytics_dataset
 GROUP BY subscription_model
 
--- average duration in gym
+-- average duration in the gym
 SELECT 
 AVG(duration_in_gym_minutes) AS average_duration_in_gym
 FROM fitness_membership_analytics_dataset
@@ -114,7 +114,7 @@ GROUP BY
         ELSE 'not use'
     END
 
--- average duration if having drink
+-- average duration of having a drink
 SELECT 
     CASE    
         WHEN has_drink_subscription = 1 THEN 'have drink'
