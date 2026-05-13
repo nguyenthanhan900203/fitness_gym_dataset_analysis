@@ -1,13 +1,10 @@
 # 🏋️‍♂️ Fitness Gym Data Analytics Project
-
-Welcome to the **Fitness Gym Data Analytics Project** repository! 🚀  
+ 
 This project demonstrates an end-to-end data analytics workflow, from database initialization and data cleansing to exploratory data analysis (EDA) and advanced customer segmentation. Designed as a portfolio project, it highlights industry best practices in extracting actionable business insights from raw operational data using advanced SQL techniques.
 
 ---
 
 ## 🏗️ Analytical Workflow (The Data Journey)
-
-Instead of a traditional Medallion architecture, this project follows a strict, logical **Analytical Workflow** to ensure data integrity and deep business intelligence:
 
 1. **Stage 1: Preparation & Cleansing**: Creating the relational database schema, handling missing values, and standardizing data formats (`00_create` to `01_data_prep`).
 2. **Stage 2: Exploratory Data Analysis (EDA)**: Profiling the data across multiple dimensions (demographics, memberships, locations) and measuring magnitudes to understand distributions (`02_EDA` to `07_EDA`).
